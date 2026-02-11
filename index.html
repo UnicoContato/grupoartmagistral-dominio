@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmácia ArtMagistral</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#4ade80',
+                            DEFAULT: '#16a34a',
+                            dark: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden relative">
+
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-brand-light/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-300/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-20 w-96 h-96 bg-purple-300/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
+            <a href="#" class="text-2xl font-bold text-brand-dark tracking-tight flex items-center gap-2">
+                ArtMagistral
+            </a>
+
+            <nav class="hidden md:flex gap-8 items-center font-medium text-gray-600">
+                <a href="#inicio" class="hover:text-brand transition-colors">Início</a>
+                <a href="#sobre" class="hover:text-brand transition-colors">Sobre</a>
+                <a href="#servicos" class="hover:text-brand transition-colors">Serviços</a>
+                <a href="#galeria" class="hover:text-brand transition-colors">Galeria</a>
+                <a href="#contato" class="hover:text-brand transition-colors">Contato</a>
+            </nav>
+
+            <a href="https://wa.me/557734814820" target="_blank" class="hidden md:flex bg-brand text-white px-5 py-2 rounded-full hover:bg-brand-dark transition-all shadow-lg hover:shadow-green-300/50 items-center gap-2">
+                <i class="ph-fill ph-whatsapp-logo text-lg"></i>
+                WhatsApp
+            </a>
+
+            <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="absolute top-20 left-0 w-full px-6 md:hidden opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-5">
+            <div class="glass rounded-2xl p-6 flex flex-col gap-4 text-center">
+                <a href="#inicio" class="text-lg font-medium text-gray-700 py-2 border-b border-gray-100">Início</a>
+                <a href="#sobre" class="text-lg font-medium text-gray-700 py-2 border-b border-gray-100">Sobre</a>
+                <a href="#servicos" class="text-lg font-medium text-gray-700 py-2 border-b border-gray-100">Serviços</a>
+                <a href="#galeria" class="text-lg font-medium text-gray-700 py-2 border-b border-gray-100">Galeria</a>
+                <a href="#contato" class="text-lg font-medium text-gray-700 py-2">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="img/hero.jpeg" alt="Fachada Farmácia ArtMagistral" class="w-full h-full object-cover animate-zoom-slow">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/30"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center md:text-left w-full pt-20">
+            <div class="md:w-2/3 reveal-fade-up">
+                <span class="inline-block py-1 px-3 rounded-full bg-brand/20 backdrop-blur-md border border-brand/30 text-brand-light text-sm font-semibold mb-4">
+                    Desde 2002 cuidando de você
+                </span>
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+                    Sua saúde manipulada com <span class="text-brand-light">Arte e Precisão.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl leading-relaxed">
+                    Referência em manipulação em Bom Jesus da Lapa. Qualidade, segurança e atendimento personalizado para o seu bem-estar.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <a href="#contato" class="bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-[0_0_20px_rgba(74,222,128,0.5)] hover:scale-105 flex items-center justify-center gap-2">
+                        Entrar em Contato
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#sobre" class="glass text-white border border-white/30 hover:bg-white/20 px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center">
+                        Conheça Mais
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative reveal-fade-right">
+                    <div class="absolute -inset-4 bg-brand rounded-2xl blur-lg opacity-30"></div>
+                    <img src="img/sobre.jpeg" alt="Interior da Farmácia" class="relative rounded-2xl shadow-2xl border border-white/50 w-full object-cover h-[500px]">
+                    <div class="absolute bottom-6 right-6 glass px-6 py-4 rounded-xl border border-white/40 shadow-lg">
+                        <p class="text-brand-dark font-bold text-2xl">20+</p>
+                        <p class="text-sm text-gray-600">Anos de experiência</p>
+                    </div>
+                </div>
+                
+                <div class="reveal-fade-left">
+                    <h2 class="text-brand font-bold uppercase tracking-wider text-sm mb-2">Quem Somos</h2>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-6">Excelência e tradição em cada fórmula</h3>
+                    
+                    <div class="space-y-4 text-gray-600 leading-relaxed text-lg">
+                        <p>
+                            A Farmácia de manipulação <strong>ArtMagistral</strong> foi inaugurada em julho de 2002, em Bom Jesus da Lapa, Bahia. Nascemos com o propósito de oferecer soluções personalizadas em saúde, sempre com responsabilidade e qualidade.
+                        </p>
+                        <p>
+                            Nossa missão é promover saúde e bem-estar com excelência técnica e ética. Acreditamos que cada paciente é único, por isso, cada fórmula é desenvolvida de forma personalizada, seguindo rigorosos padrões da ANVISA e garantindo total segurança.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="text-brand w-6 h-6"></i>
+                            <span class="font-medium text-gray-700">Atendimento Humanizado</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="text-brand w-6 h-6"></i>
+                            <span class="font-medium text-gray-700">Controle de Qualidade</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="text-brand w-6 h-6"></i>
+                            <span class="font-medium text-gray-700">Ética Profissional</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="text-brand w-6 h-6"></i>
+                            <span class="font-medium text-gray-700">Normas da ANVISA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-24 bg-gray-100/50 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-fade-up">
+                <h2 class="text-brand font-bold uppercase tracking-wider text-sm mb-2">Nossas Especialidades</h2>
+                <h3 class="text-4xl font-bold text-gray-900">Soluções completas para sua saúde</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal-fade-up" style="animation-delay: 100ms;">
+                    <div class="w-14 h-14 bg-brand/10 rounded-full flex items-center justify-center mb-6 text-brand">
+                        <i data-lucide="pill" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Manipulação de Fórmulas</h4>
+                    <p class="text-gray-600">Medicamentos personalizados na dosagem exata prescrita pelo seu médico, garantindo eficácia e tratamento individualizado.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal-fade-up" style="animation-delay: 200ms;">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-full flex items-center justify-center mb-6 text-blue-600">
+                        <i data-lucide="droplets" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Dermocosméticos</h4>
+                    <p class="text-gray-600">Produtos para cuidados com a pele, cabelos e estética, desenvolvidos com ativos de alta tecnologia e performance.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 reveal-fade-up" style="animation-delay: 300ms;">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-full flex items-center justify-center mb-6 text-purple-600">
+                        <i data-lucide="leaf" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Suplementos & Naturais</h4>
+                    <p class="text-gray-600">Fitoterápicos, vitaminas e suplementos manipulados para potenciar sua saúde, imunidade e energia diária.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-fade-up">
+                <h3 class="text-4xl font-bold text-gray-900">Nossa Estrutura</h3>
+                <p class="text-gray-600 mt-4">Um ambiente moderno e acolhedor esperando por você.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+                <div class="col-span-2 row-span-2 overflow-hidden rounded-2xl shadow-lg reveal-fade-up group">
+                    <img src="img/1.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Interior">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg reveal-fade-up group" style="animation-delay: 100ms;">
+                    <img src="img/2.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Produtos">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg reveal-fade-up group" style="animation-delay: 200ms;">
+                    <img src="img/3.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Prateleira">
+                </div>
+                <div class="col-span-2 row-span-1 overflow-hidden rounded-2xl shadow-lg reveal-fade-up group" style="animation-delay: 300ms;">
+                    <img src="img/4.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Granel">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-24 relative bg-brand-dark">
+        <div class="absolute inset-0 opacity-20 bg-[url('img/hero.jpeg')] bg-cover bg-center mix-blend-overlay"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="glass-dark p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl flex flex-col md:flex-row gap-12">
+                
+                <div class="w-full md:w-1/2 text-white">
+                    <h3 class="text-3xl font-bold mb-6">Entre em Contato</h3>
+                    <p class="text-gray-300 mb-8">Estamos prontos para atender você com agilidade e carinho. Solicite seu orçamento ou faça-nos uma visita.</p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="bg-white/20 p-3 rounded-lg"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                            <div>
+                                <h5 class="font-bold text-brand-light">Endereço</h5>
+                                <p class="text-gray-300">Av. Manoel Novais, 468, Centro<br>Bom Jesus da Lapa - BA, 47.600-000</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-white/20 p-3 rounded-lg"><i data-lucide="phone" class="w-6 h-6"></i></div>
+                            <div>
+                                <h5 class="font-bold text-brand-light">Telefone / WhatsApp</h5>
+                                <p class="text-gray-300">(77) 3481-4820</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-white/20 p-3 rounded-lg"><i data-lucide="mail" class="w-6 h-6"></i></div>
+                            <div>
+                                <h5 class="font-bold text-brand-light">Email</h5>
+                                <p class="text-gray-300">ART.MA.GISTRAL@HOTMAIL.COM</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-8 border-t border-white/10 text-sm text-gray-400">
+                        <p>CNPJ: 05.122.756/0001-27 | Farmácia ArtMagistral LTDA</p>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 h-80 md:h-auto rounded-2xl overflow-hidden shadow-inner border border-white/20">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d970.8848950857448!2d-43.42003930493036!3d-13.254185798750926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x75c7406cad9dc81%3A0xa4f8661e01178e1!2sFarm%C3%A1cia%20Artmagistral!5e0!3m2!1spt-BR!2sbr!4v1770827551548!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-500 py-8 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 FARMACIA ARTMAGISTRAL LTDA. Todos os direitos reservados.</p>
+            <button id="privacy-btn" class="hover:text-brand transition-colors underline">Política de Privacidade</button>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/557734814820" target="_blank" class="fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform animate-pulse-custom">
+        <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+    </a>
+
+    <div id="privacy-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white/90 backdrop-blur-xl w-11/12 md:w-1/2 max-h-[80vh] overflow-y-auto rounded-2xl shadow-2xl p-8 relative border border-white transform scale-95 transition-transform duration-300" id="modal-content">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-500">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h2 class="text-2xl font-bold mb-4 text-brand-dark">Política de Privacidade</h2>
+            <div class="prose text-gray-600 text-sm space-y-4">
+                <p>A <strong>Farmácia ArtMagistral</strong> valoriza a privacidade de seus usuários. Esta política descreve como coletamos e protegemos suas informações.</p>
+                <p><strong>1. Coleta de Dados:</strong> Coletamos informações fornecidas voluntariamente ao entrar em contato conosco (nome, telefone), estritamente para fins de atendimento e orçamento.</p>
+                <p><strong>2. Uso das Informações:</strong> Seus dados não são vendidos ou compartilhados com terceiros, exceto quando necessário para cumprimento legal ou processamento de pedidos logísticos.</p>
+                <p><strong>3. Segurança:</strong> Adotamos medidas técnicas para proteger seus dados contra acesso não autorizado.</p>
+                <p>Para mais informações, entre em contato através dos nossos canais oficiais.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

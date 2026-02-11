@@ -1,0 +1,95 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-dark {
+    background: rgba(91, 146, 84, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(131, 207, 169, 0.5);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 40px rgba(74, 222, 128, 0.2);
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+@keyframes zoomSlow {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.animate-zoom-slow {
+    animation: zoomSlow 20s infinite alternate linear;
+}
+
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+@keyframes pulseCustom {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.animate-pulse-custom {
+    animation: pulseCustom 2s infinite;
+}
+
+.reveal-fade-up, .reveal-fade-left, .reveal-fade-right {
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+.reveal-fade-up { transform: translateY(50px); }
+.reveal-fade-left { transform: translateX(50px); }
+.reveal-fade-right { transform: translateX(-50px); }
+
+.reveal-fade-up.active { opacity: 1; transform: translateY(0); }
+.reveal-fade-left.active { opacity: 1; transform: translateX(0); }
+.reveal-fade-right.active { opacity: 1; transform: translateX(0); }
+
+#main-header.scrolled .glass {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+#main-header.hidden-nav {
+    transform: translateY(-100%);
+}
